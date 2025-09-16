@@ -8968,8 +8968,7 @@ table {
 }
 
 .box {
-  padding-bottom: 45px;
-  margin-top: 70px;
+  margin-top: 20px;
 }
 
 .offset-top {
@@ -9277,9 +9276,6 @@ table {
     padding-right: 0.5rem;
     padding-left: 0.5rem;
   }
-  .box {
-    padding-bottom: 60px;
-  }
   .offset-top {
     padding-top: 120px;
   }
@@ -9502,9 +9498,6 @@ table {
     flex: 0 0 auto;
     padding-right: 0.5rem;
     padding-left: 0.5rem;
-  }
-  .box {
-    padding-bottom: 90px;
   }
   .offset-top {
     padding-top: 180px;
@@ -9731,9 +9724,6 @@ table {
     flex: 0 0 auto;
     padding-right: 0.5rem;
     padding-left: 0.5rem;
-  }
-  .box {
-    padding-bottom: 120px;
   }
   .offset-top {
     padding-top: 230px;
@@ -9972,7 +9962,7 @@ h6 b {
 }
 
 h2 {
-  font-size: 5em;
+  font-size: 2rem;
 }
 
 h3 + p,
@@ -13522,6 +13512,7 @@ header .header-description {
   }
   .approach-desc {
     font-size: 1.8vw;
+    padding-bottom: 120px;
   }
   #clients li {
     padding: 4vw;
