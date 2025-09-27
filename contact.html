@@ -33,7 +33,270 @@
     <link href="css/custom.css" rel="stylesheet" type="text/css" />
 
     <link href="css/styles.css" rel="stylesheet" type="text/css" />
-  
+<style>
+
+#main-form h2 {
+  font-size: 70px;
+}
+.pricing-subtittle p {
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+header {
+  color: hsl(233, 13%, 49%);
+  margin: 3.3rem 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.toggle {
+  margin-top: 2rem;
+  color: hsl(234, 14%, 74%);
+  display: flex;
+  align-items: center;
+}
+.toggle-btn {
+  margin: 0 1rem;
+}
+.checkbox {
+  display: none;
+}
+
+.sub {
+  background: linear-gradient(
+    135deg,
+    rgba(163, 168, 240, 1) 0%,
+    rgba(105, 111, 221, 1) 100%
+  );
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 1.6rem;
+  width: 3.3rem;
+  border-radius: 1.6rem;
+  padding: 0.3rem;
+}
+.circle {
+  background-color: #fff;
+  height: 1.4rem;
+  width: 1.4rem;
+  border-radius: 50%;
+}
+.checkbox:checked + .sub {
+  justify-content: flex-end;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.card {
+  background: #fff;
+  color: hsl(233, 13%, 49%);
+  border-radius: 0.8rem;
+}
+
+.cards .card.active {
+  background: linear-gradient(
+    135deg,
+    rgba(163, 168, 240, 1) 0%,
+    rgba(105, 111, 221, 1) 100%
+  );
+  color: #fff;
+  display: flex;
+  align-items: center;
+  transform: scale(1.1);
+  z-index: 1;
+}
+ul {
+  margin: 2.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+ul li {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 1rem 0;
+}
+ul li.price {
+  font-size: 3rem;
+  color: hsl(232, 13%, 33%);
+  padding-bottom: 2rem;
+}
+.shadow {
+  box-shadow: -5px 5px 15px 1px rgba(0, 0, 0, 0.1);
+}
+
+.card.active .price {
+  color: #fff;
+}
+
+.btn {
+  margin-top: 1rem;
+  height: 2.6rem;
+  width: 13.3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  background: linear-gradient(
+    135deg,
+    rgba(163, 168, 240, 1) 0%,
+    rgba(105, 111, 221, 1) 100%
+  );
+  color: #fff;
+  outline: none;
+  border: 0;
+  font-weight: bold;
+}
+.active-btn {
+  background: #fff;
+  color: hsl(237, 63%, 64%);
+}
+.bottom-bar {
+  border-bottom: 2px solid hsla(240, 8%, 85%, 0.582);
+}
+.card.active .bottom-bar {
+  border-bottom: 2px solid hsla(240, 8%, 85%, 0.253);
+}
+.pack {
+  font-size: 1.1rem;
+}
+
+@media (max-width: 280px) {
+  ul {
+    margin: 1rem;
+  }
+  h1 {
+    font-size: 1.2rem;
+  }
+  .toggle {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    height: 80px;
+  }
+  .cards {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card {
+    transform: scale(0.8);
+    margin-bottom: 1rem;
+  }
+  .cards .card.active {
+    transform: scale(0.8);
+  }
+}
+
+@media (min-width: 280px) and (max-width: 320px) {
+  ul {
+    margin: 20px;
+  }
+  .cards {
+    display: flex;
+    flex-direction: column;
+  }
+  .card {
+    margin-bottom: 1rem;
+  }
+  .cards .card.active {
+    transform: scale(1);
+  }
+}
+
+@media (min-width: 320px) and (max-width: 414px) {
+  .cards {
+    display: flex;
+    flex-direction: column;
+  }
+  .card {
+    margin-bottom: 1rem;
+  }
+  .cards .card.active {
+    transform: scale(1);
+  }
+}
+@media (min-width: 414px) and (max-width: 768px) {
+  .card {
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+  }
+  .cards .card.active {
+    transform: scale(1);
+  }
+}
+@media (min-width: 768px) and (max-width: 1046px) {
+  .cards {
+    display: flex;
+  }
+  .card {
+    margin-bottom: 1rem;
+    margin-right: 1rem;
+  }
+  .cards .card.active {
+    transform: scale(1);
+  }
+}
+
+
+.pricing-section {
+  transition: all 0.3s ease-in-out;
+  margin-top: 40px;
+}
+
+/* Optional: Add some animation when cards appear */
+.cards {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Style for active service selection */
+.link.active {
+  border-bottom: 2px solid #6c63ff;
+  color: #6c63ff;
+}
+
+.link {
+  cursor: pointer;
+  transition: all 0.3s ease;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.link:hover {
+  background-color: rgba(108, 99, 255, 0.1);
+  transform: translateY(-2px);
+}
+</style>
+
+<style>
+  #footer{
+    margin-top: 50px;
+  }
+</style>
 </head>
 
 
@@ -105,8 +368,6 @@
                 xlink:href="img/navigation/work.jpg"
                 class="selected"
               ></image>
-              <!-- <image data-img-clip="Services" clip-path="url(#navCircleClip)" width="1440" height="800"
-                            xlink:href="img/navigation/studio.jpg" class="selected"></image> -->
               <image
                 data-img-clip="Team"
                 clip-path="url(#navCircleClip)"
@@ -163,787 +424,77 @@
       </div>
       <div class="scene-element scene_element--fadeinup">
        
-        <div id="main-form" class="main-form">
-          <div class="form-content">
-            <section class="grid-wrap">
-              <div class="row center-xs">
-                <div class="col-xs-12">
-                  <h6 class="section-caption">Let's start</h6>
-                  <h1>how can we <br />help you?</h1>
-                </div>
-              </div>
-
-              <div class="option-wrap">
-                <div class="row center-xs">
-                  <div
-                    class="col-xs-5 col-sm-3 link js-show-section"
-                    data-form="website"
-                  >
-                    <figure class="form-icon">
-                      <img src="img/form/icon-website.svg" alt="Website" />
-                    </figure>
-                    <h3 class="">Tech</h3>
-                  </div>
-                  <div
-                    class="col-xs-5 col-sm-3 link js-show-section"
-                    data-form="website"
-                  >
-                    <figure class="form-icon">
-                      <img
-                        src="img/form/icon-brand.svg"
-                        alt="Digital Marketing"
-                      />
-                    </figure>
-                    <h3 class="">Growth</h3>
-                  </div>
-                  <div
-                    class="col-xs-5 col-sm-3 col-xs-offset-1 col-sm-offset-0 link js-show-section"
-                    data-form="website"
-                  >
-                    <figure class="form-icon">
-                      <img src="img/form/icon-chat.svg" alt="website" />
-                    </figure>
-                    <h3 class="">I don't know</h3>
-                  </div>
-                </div>
-              </div>
-            </section>
-          </div>
-
-          
-
-          <section class="main-type" id="website">
-            <div class="grid-wrap">
-              <nav class="form-pager form-pager-1">
-                <ul>
-                  <li><a href="#web-step-1" data-anchor="web-step-1">01</a></li>
-                  <li><a href="#web-step-2" data-anchor="web-step-2">02</a></li>
-                  <li><a href="#web-step-3" data-anchor="web-step-3">03</a></li>
-                </ul>
-              </nav>
-              <form id="form-1">
-                <div id="web-step-1" class="step step-1">
-                  <div class="offset-top-sm">
-                    <div class="row center-xs">
-                      <div class="col-xs-12">
-                        <div class="step-number">
-                          <strong>01</strong> &mdash; 03
-                        </div>
-                        <h2>budget &amp;<br />timeline</h2>
-                        <div class="row center-xs">
-                          <div class="col-xs-10 col-sm-8 col-lg-6"></div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-wrap">
-                      <div class="row center-xs">
-                        <div class="col-xs-10 col-sm-8 col-lg-6">
-                          <div id="website-slider-budget"></div>
-                          <p class="section-caption">Approximate budget</p>
-                          <input
-                            class="slider-input"
-                            name="slider-budget-input"
-                            type="text"
-                            id="website-slider-budget-input"
-                            readonly
-                          />
-                        </div>
-                      </div>
-                      <div class="row center-xs">
-                        <div class="col-xs-10 col-sm-8 col-lg-6">
-                          <div id="website-slider-week"></div>
-                          <p class="section-caption">Estimated timeline</p>
-                          <input
-                            class="slider-input"
-                            name="slider-week-input"
-                            type="text"
-                            id="website-slider-week-input"
-                            readonly
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- End of step 2 -->
-
-                <div id="web-step-2" class="step step-2">
-                  <div class="offset-top-sm">
-                    <div class="row center-xs">
-                      <div class="col-xs-12 col-sm-9 col-md-7">
-                        <div class="step-number">
-                          <strong>02</strong> &mdash; 03
-                        </div>
-                        <h2>project <br />details</h2>
-                      </div>
-                    </div>
-                    <div class="form-wrap">
-                      <div class="row center-xs">
-                        <div class="col-xs-12 col-sm-10 col-md-8">
-                          <div class="row">
-                            <div class="col-xs-12 col-lg-6">
-                              <p>
-                                <input
-                                  class="text-input"
-                                  name="name"
-                                  type="text"
-                                  id="text-input-name"
-                                  placeholder="Name *"
-                                  data-validation="length required"
-                                  data-validation-length="3-40"
-                                  data-validation-error-msg="Name must be at least 3 characters"
-                                />
-                              </p>
-                            </div>
-                            <div class="col-xs-12 col-lg-6">
-                              <p>
-                                <input
-                                  class="text-input"
-                                  name="email"
-                                  type="email"
-                                  id="text-input-email"
-                                  placeholder="Email *"
-                                  data-validation="email required"
-                                  data-validation-error-msg="Please provide an accurate email address"
-                                />
-                              </p>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-xs-12 col-lg-6">
-                              <input
-                                class="text-input"
-                                name="phone"
-                                type="text"
-                                placeholder="Phone"
-                                id="text-input-phone"
-                              />
-                            </div>
-                            <div class="col-xs-12 col-lg-6">
-                              <input
-                                class="text-input"
-                                name="company-name"
-                                type="text"
-                                placeholder="Company Name"
-                                id="text-input-company-name"
-                              />
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-xs-12">
-                              <input
-                                class="text-input"
-                                name="current-website-url"
-                                type="text"
-                                placeholder="Current website url"
-                                id="text-input-current-website-url"
-                              />
-                            </div>
-                            <p>
-                              <input
-                                type="checkbox"
-                                name="contact_me_by_fax_only"
-                                value="1"
-                                style="display: none !important"
-                                tabindex="-1"
-                                autocomplete="false"
-                              />
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- End of step 3 -->
-
-                <div id="web-step-3" class="step step-3">
-                  <div class="offset-top-sm">
-                    <div class="row center-xs">
-                      <div class="col-xs-12 col-sm-9 col-md-7">
-                        <div class="step-number"><strong>03</strong> - 03</div>
-                        <h2>finish strong!</h2>
-                        <div class="row center-xs">
-                          <div class="col-xs-12 col-md-10">
-                            <p class="small">
-                              If there are other details that you would like to
-                              mention about your brand, please drop a message in
-                              the box below!
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-wrap">
-                      <div class="row center-xs">
-                        <div class="col-xs-12 col-md-6">
-                          <textarea
-                            rows="4"
-                            cols="50"
-                            placeholder="Description"
-                            name="additional-info"
-                            id="text-input-additional-info"
-                          ></textarea>
-                        </div>
-                      </div>
-                      <div class="row center-xs">
-                        <div class="col-xs-8 col-sm-4 col-lg-3">
-                          <div class="submit-button-wrap">
-                            <button
-                              name="submit"
-                              class="submit-button"
-                              id="submit-button"
-                              style="border: none; outline: none"
-                              onclick="submitForm()"
-                            >
-                              SEND OVER
-                            </button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <!-- End of step 4 -->
-              </form>
-            </div>
-          </section>
-          <!-- End of #website -->
-
-          <!-- Start of #ecommerce -->
-          <section class="main-type" id="marketing">
-            <div class="grid-wrap">
-              <nav class="form-pager form-pager-2">
-                <ul>
-                  <li>
-                    <a href="#ecommerce-step-1" data-anchor="ecommerce-step-1"
-                      >01</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#ecommerce-step-2" data-anchor="ecommerce-step-2"
-                      >02</a
-                    >
-                  </li>
-                  <li>
-                    <a href="#ecommerce-step-3" data-anchor="ecommerce-step-3"
-                      >03</a
-                    >
-                  </li>
-                </ul>
-              </nav>
-              <form  id="form-2">
-                <div id="ecommerce-step-1" class="step step-1">
-                  <div class="offset-top-sm">
-                    <div class="row center-xs">
-                      <div class="col-xs-12 col-sm-9 col-md-7">
-                        <div class="step-number">
-                          <strong>01</strong> &mdash; 04
-                        </div>
-                        <h2>what do <br />you need?</h2>
-                      </div>
-                    </div>
-                    <div class="hidden">
-                      <input
-                        name="main-category"
-                        type="hidden"
-                        class="js-form-link-main-data"
-                      />
-                    </div>
-                    <div class="option-wrap">
-                      <div class="row start-xs center-sm">
-                        <div
-                          class="col-xs-6 col-sm-3 col-sm-offset-0 js-form-link"
-                          data-anchor="ecommerce-step-2"
-                        >
-                          <figure class="form-icon">
-                            <img
-                              src="img/form/icon-web-design.svg"
-                              alt="Web design"
-                            />
-                          </figure>
-                          <h3 class="center">Android</h3>
-                        </div>
-
-                        <div
-                          class="col-xs-6 col-sm-3 col-sm-offset-0 js-form-link js-form-link"
-                          data-anchor="ecommerce-step-2"
-                        >
-                          <figure class="form-icon">
-                            <img
-                              src="img/form/icon-web-code.svg"
-                              alt="Web decelopment"
-                            />
-                          </figure>
-                          <h3 class="center">iOS</h3>
-                        </div>
-
-                        <div
-                          class="col-xs-6 col-sm-3 col-xs-offset-3 col-sm-offset-0 js-form-link"
-                          data-anchor="ecommerce-step-2"
-                        >
-                          <figure class="form-icon">
-                            <img
-                              src="img/form/icon-web-both.svg"
-                              alt="Full service"
-                            />
-                          </figure>
-                          <h3 class="center">Cross-Platform</h3>
-                        </div>
-                        <input
-                          name="sub-category"
-                          type="hidden"
-                          class="js-form-link-data"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-          
-                <div id="ecommerce-step-2" class="step step-2">
-                  <div class="offset-top-sm">
-                    <div class="row center-xs">
-                      <div class="col-xs-12 col-sm-9 col-md-7">
-                        <div class="step-number"><strong>02</strong> - 04</div>
-                        <h2>budget &amp;<br />timeline</h2>
-                        <div class="row center-xs">
-                          <div class="col-xs-10 col-sm-8 col-md-6">
-                          
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-wrap">
-                      <div class="row center-xs">
-                        <div class="col-xs-10 col-sm-8 col-lg-6">
-                          <div id="ecommerce-slider-budget"></div>
-                          <p class="section-caption">Approximate budget</p>
-                          <input
-                            class="slider-input"
-                            name="slider-budget-input"
-                            type="text"
-                            id="ecommerce-slider-budget-input"
-                            readonly
-                          />
-                        </div>
-                      </div>
-                      <div class="row center-xs">
-                        <div class="col-xs-10 col-sm-8 col-lg-6">
-                          <div id="ecommerce-slider-week"></div>
-                          <p class="section-caption">Estimated timeline</p>
-                          <input
-                            class="slider-input"
-                            name="slider-week-input"
-                            type="text"
-                            id="ecommerce-slider-week-input"
-                            readonly
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-        
-
-                <div id="ecommerce-step-3" class="step step-3">
-                  <!-- <div class="offset-top-sm">
-                    <div class="row center-xs">
-                      <div class="col-xs-12 col-sm-9 col-md-7">
-                        <div class="step-number"><strong>03</strong> - 04</div>
-                        <h2>project <br />details</h2>
-                      </div>
-                    </div>
-                    <div class="form-wrap">
-                      <div class="row center-xs">
-                        <div class="col-xs-12 col-sm-10 col-md-8">
-                          <div class="row">
-                            <div class="col-xs-12 col-lg-6">
-                              <p>
-                                <input
-                                  class="text-input"
-                                  name="name"
-                                  type="text"
-                                  placeholder="Name *"
-                                  data-validation="length required"
-                                  data-validation-length="3-40"
-                                  data-validation-error-msg="Name must be at least 3 characters"
-                                />
-                              </p>
-                            </div>
-                            <div class="col-xs-12 col-lg-6">
-                              <p>
-                                <input
-                                  class="text-input"
-                                  name="email"
-                                  type="email"
-                                  placeholder="Email *"
-                                  data-validation="email required"
-                                  data-validation-error-msg="Please provide an accurate email address"
-                                />
-                              </p>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-xs-12 col-lg-6">
-                              <input
-                                class="text-input"
-                                name="phone"
-                                type="text"
-                                placeholder="Phone"
-                              />
-                            </div>
-                            <div class="col-xs-12 col-lg-6">
-                              <input
-                                class="text-input"
-                                name="company-name"
-                                type="text"
-                                placeholder="Company Name"
-                              />
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-xs-12">
-                              <input
-                                class="text-input"
-                                name="current-website-url"
-                                type="text"
-                                placeholder="Current website url"
-                              />
-                            </div>
-                            <p>
-                              <input
-                                type="checkbox"
-                                name="contact_me_by_fax_only"
-                                value="1"
-                                style="display: none !important"
-                                tabindex="-1"
-                                autocomplete="false"
-                              />
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div> -->
-                </div>
-               
-
-                <div id="ecommerce-step-4" class="step step-4">
-                  <!-- <div class="offset-top-sm">
-                    <div class="row center-xs">
-                      <div class="col-xs-12 col-sm-9 col-md-7">
-                        <div class="step-number"><strong>04</strong> - 04</div>
-                        <h2>finish strong!</h2>
-                        <div class="row center-xs">
-                          <div class="col-xs-12 col-md-10">
-                            <p class="small">
-                              If there are other details that you would like to
-                              mention about your initiative, please drop a
-                              message in the box below!
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-wrap">
-                      <div class="row center-xs">
-                        <div class="col-xs-12 col-md-6">
-                          <textarea
-                            rows="4"
-                            cols="50"
-                            placeholder="Don't be shy..."
-                            name="additional-info"
-                          ></textarea>
-                        </div>
-                      </div>
-                      <div class="row center-xs">
-                        <div class="col-xs-8 col-sm-4 col-lg-3">
-                          <div class="submit-button-wrap">
-                            <input
-                              name="submit"
-                              class="submit-button"
-                              value="SEND OVER"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div> -->
-                </div>
-              
-              </form>
-            </div>
-          </section>
-
-             
-  
-          <!-- End of #marketing -->
-          <section class="main-type" id="brand">
-          <div class="grid-wrap">
-              <nav class="form-pager form-pager-3">
-                <ul>
-                  <li>
-                    <a href="#brand-step-1" data-anchor="brand-step-1">01</a>
-                  </li>
-                  <li>
-                    <a href="#brand-step-2" data-anchor="brand-step-2">02</a>
-                  </li>
-                  <li>
-                    <a href="#brand-step-3" data-anchor="brand-step-3">03</a>
-                  </li>
-                  <li>
-                    <a href="#brand-step-4" data-anchor="brand-step-4">04</a>
-                  </li>
-                </ul>
-              </nav>
-              <form  id="form-3">
-                <div id="brand-step-1" class="step step-1">
-                  <div class="offset-top-sm">
-                    <div class="row center-xs">
-                      <div class="col-xs-12 col-sm-9 col-md-7">
-                        <div class="step-number">
-                          <strong>01</strong> &mdash; 04
-                        </div>
-                        <h2>what do <br />you need?</h2>
-                      </div>
-                    </div>
-                    <div class="hidden">
-                      <input
-                        name="main-category"
-                        type="hidden"
-                        class="js-form-link-main-data"
-                      />
-                    </div>
-                    <div class="option-wrap">
-                      <div class="row start-xs center-sm">
-                        <div
-                          class="col-xs-6 col-sm-3 col-sm-offset-0 js-form-link"
-                          data-anchor="brand-step-2"
-                        >
-                          <figure class="form-icon">
-                            <img
-                              src="img/form/icon-web-design.svg"
-                              alt="Web design"
-                            />
-                          </figure>
-                          <h3 class="center">SEO</h3>
-                        </div>
-
-                        <div
-                          class="col-xs-6 col-sm-3 col-sm-offset-0 js-form-link"
-                          data-anchor="brand-step-2"
-                        >
-                          <figure class="form-icon">
-                            <img
-                              src="img/form/icon-web-code.svg"
-                              alt="Web decelopment"
-                            />
-                          </figure>
-                          <h3 class="center">Social Media Marketing</h3>
-                        </div>
-
-                        <div
-                          class="col-xs-6 col-sm-3 col-xs-offset-3 col-sm-offset-0 js-form-link"
-                          data-anchor="brand-step-2"
-                        >
-                          <figure class="form-icon">
-                            <img
-                              src="img/form/icon-web-both.svg"
-                              alt="Full service"
-                            />
-                          </figure>
-                          <h3 class="center">Lead Generation</h3>
-                        </div>
-                        <input
-                          name="sub-category"
-                          type="hidden"
-                          class="js-form-link-data"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                <div id="brand-step-2" class="step step-2">
-                  <div class="offset-top-sm">
-                    <div class="row center-xs">
-                      <div class="col-xs-12 col-sm-9 col-md-7">
-                        <div class="step-number"><strong>02</strong> - 04</div>
-                        <h2>budget &amp;<br />timeline</h2>
-                        <div class="row center-xs">
-                          <div class="col-xs-10 col-sm-8 col-md-6">
-                            
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-wrap">
-                      <div class="row center-xs">
-                        <div class="col-xs-10 col-sm-8 col-lg-6">
-                          <div id="brand-slider-budget"></div>
-                          <p class="section-caption">Approximate budget</p>
-                          <input
-                            class="slider-input"
-                            name="slider-budget-input"
-                            type="text"
-                            id="brand-slider-budget-input"
-                            readonly
-                          />
-                        </div>
-                      </div>
-                      <div class="row center-xs">
-                        <div class="col-xs-10 col-sm-8 col-lg-6">
-                          <div id="brand-slider-week"></div>
-                          <p class="section-caption">Estimated timeline</p>
-                          <input
-                            class="slider-input"
-                            name="slider-week-input"
-                            type="text"
-                            id="brand-slider-week-input"
-                            readonly
-                          />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-
-                <div id="brand-step-3" class="step step-3">
-                  <div class="offset-top-sm">
-                    <div class="row center-xs">
-                      <div class="col-xs-12 col-sm-9 col-md-7">
-                        <div class="step-number"><strong>03</strong> - 04</div>
-                        <h2>project <br />details</h2>
-                      </div>
-                    </div>
-                    <div class="form-wrap">
-                      <div class="row center-xs">
-                        <div class="col-xs-12 col-sm-10 col-md-8">
-                          <div class="row">
-                            <div class="col-xs-12 col-lg-6">
-                              <p>
-                                <input
-                                  class="text-input"
-                                  name="name"
-                                  type="text"
-                                  placeholder="Name *"
-                                  data-validation="length required"
-                                  data-validation-length="3-40"
-                                  data-validation-error-msg="Name must be at least 3 characters"
-                                />
-                              </p>
-                            </div>
-                            <div class="col-xs-12 col-lg-6">
-                              <p>
-                                <input
-                                  class="text-input"
-                                  name="email"
-                                  type="email"
-                                  placeholder="Email *"
-                                  data-validation="email required"
-                                  data-validation-error-msg="Please provide an accurate email address"
-                                />
-                              </p>
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-xs-12 col-lg-6">
-                              <input
-                                class="text-input"
-                                name="phone"
-                                type="text"
-                                placeholder="Phone"
-                              />
-                            </div>
-                            <div class="col-xs-12 col-lg-6">
-                              <input
-                                class="text-input"
-                                name="company-name"
-                                type="text"
-                                placeholder="Company Name"
-                              />
-                            </div>
-                          </div>
-                          <div class="row">
-                            <div class="col-xs-12">
-                              <input
-                                class="text-input"
-                                name="current-website-url"
-                                type="text"
-                                placeholder="Current website url"
-                              />
-                            </div>
-                            <p>
-                              <input
-                                type="checkbox"
-                                name="contact_me_by_fax_only"
-                                value="1"
-                                style="display: none !important"
-                                tabindex="-1"
-                                autocomplete="false"
-                              />
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-            
-
-                <div id="brand-step-4" class="step step-4">
-                  <div class="offset-top-sm">
-                    <div class="row center-xs">
-                      <div class="col-xs-12 col-sm-9 col-md-7">
-                        <div class="step-number"><strong>04</strong> - 04</div>
-                        <h2>finish strong!</h2>
-                        <div class="row center-xs">
-                          <div class="col-xs-12 col-md-10">
-                            <p class="small">
-                              If there are other details that you would like to
-                              mention about your initiative, please drop a
-                              message in the box below!
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="form-wrap">
-                      <div class="row center-xs">
-                        <div class="col-xs-12 col-md-6">
-                          <textarea
-                            rows="4"
-                            cols="50"
-                            placeholder="Don't be shy..."
-                            name="additional-info"
-                          ></textarea>
-                        </div>
-                      </div>
-                      <div class="row center-xs">
-                        <div class="col-xs-8 col-sm-4 col-lg-3">
-                          <div class="submit-button-wrap">
-                            <input
-                              name="submit"
-                              class="submit-button"
-                              value="SEND OVER"
-                            />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </form>
-            </div>
-          
-          </section>
-          <!-- End of #brand-->
+      <div id="main-forms" class="main-forms">
+  <div class="form-content">
+    <section class="grid-wrap">
+      <div class="row center-xs">
+        <div class="col-xs-12">
+          <h6 class="section-caption">Let's start</h6>
+          <h1>how can we <br />help you?</h1>
         </div>
       </div>
-      <div id="alert-toast" class="alert-toast">
-        Your response is successfully recorded.
+
+      <div class="option-wrap">
+        <div class="row center-xs">
+          <div class="col-xs-5 col-sm-3 link js-show-pricing" data-type="tech">
+            <figure class="form-icon">
+              <img src="img/form/icon-website.svg" alt="Tech" />
+            </figure>
+            <h3>Tech</h3>
+          </div>
+          <div class="col-xs-5 col-sm-3 link js-show-pricing" data-type="growth">
+            <figure class="form-icon">
+              <img src="img/form/icon-brand.svg" alt="Growth" />
+            </figure>
+            <h3>Growth</h3>
+          </div>
+          <div class="col-xs-5 col-sm-3 col-xs-offset-1 col-sm-offset-0 link js-show-pricing" data-type="unknown">
+            <figure class="form-icon">
+              <img src="img/form/icon-chat.svg" alt="I don't know" />
+            </figure>
+            <h3>I don't know</h3>
+          </div>
+        </div>
       </div>
+    </section>
+  </div>
+
+  <!-- Pricing Cards Section (initially hidden, appears below the options) -->
+  <section id="pricing-section" class="pricing-section" style="display: none;">
+    <div class="grid-wrap">
+      <div class="row center-xs">
+        <div class="col-xs-12">
+          <h2 id="pricing-title">Our Pricing Plans</h2>
+          <p class="pricing-subtittle">Choose the plan that works best for you</p>
+        </div>
+      </div>
+      
+      <!-- Your existing pricing cards -->
+      <div class="card__container grid">
+        <div class="cards">
+          <div class="card shadow">
+            <ul>
+              <li class="pack">Basic</li>
+              <li class="price bottom-bar">&#8377;999</li>
+            </ul>
+          </div>
+          <div class="card active">
+            <ul>
+              <li class="pack">Professional</li>
+              <li class="price bottom-bar">&#8377;1999</li>
+            </ul>
+          </div>
+          <div class="card shadow">
+            <ul>
+              <li class="pack">Master</li>
+              <li class="price bottom-bar">&#8377;19999</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</div>
 
         <footer id="footer">
             <p class="" style="text-align: center; color: white; font-size: 1.2rem;">
@@ -960,14 +511,57 @@
             </p>
             
         </footer>
-      <script src="js/form.js"></script>
+      <!-- <script src="js/form.js"></script> -->
     </div>  
     <script src="js/js-dist.js"></script>
     <div class="form-response js-form-response text-center"></div>
     <!-- COPY THIS EVERYWHERE -->
     <div class="form-response js-form-response text-center"></div>
     
-    <script src="js/main.js"></script>
+    <!-- <script src="js/main.js"></script> -->
     <!-- scripts -->
+      <script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Show pricing cards when clicking on service options
+  const serviceLinks = document.querySelectorAll('.js-show-pricing');
+  const pricingSection = document.getElementById('pricing-section');
+  const pricingTitle = document.getElementById('pricing-title');
+  
+  serviceLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+      e.preventDefault();
+      const serviceType = this.getAttribute('data-type');
+      
+      // Show pricing cards below (they're already in the flow)
+      pricingSection.style.display = 'block';
+      
+      // Scroll to pricing section smoothly
+      pricingSection.scrollIntoView({ 
+        behavior: 'smooth', 
+        block: 'start' 
+      });
+      
+      // Customize based on service type
+      customizePricing(serviceType);
+    });
+  });
+  
+  function customizePricing(serviceType) {
+    // Modify pricing title based on service type
+    switch(serviceType) {
+      case 'tech':
+        pricingTitle.textContent = 'Tech Services Pricing';
+        // You can also change prices here if needed
+        break;
+      case 'growth':
+        pricingTitle.textContent = 'Growth Services Pricing';
+        break;
+      case 'unknown':
+        pricingTitle.textContent = 'Consultation Services Pricing';
+        break;
+    }
+  }
+});
+</script>
   </body>
 </html>
