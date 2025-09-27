@@ -511,57 +511,241 @@ ul li.price {
             </p>
             
         </footer>
-      <!-- <script src="js/form.js"></script> -->
+      <script src="js/form.js"></script>
     </div>  
     <script src="js/js-dist.js"></script>
     <div class="form-response js-form-response text-center"></div>
     <!-- COPY THIS EVERYWHERE -->
     <div class="form-response js-form-response text-center"></div>
     
-    <!-- <script src="js/main.js"></script> -->
+    <script src="js/main.js"></script>
     <!-- scripts -->
-      <script>
-document.addEventListener('DOMContentLoaded', function() {
-  // Show pricing cards when clicking on service options
-  const serviceLinks = document.querySelectorAll('.js-show-pricing');
-  const pricingSection = document.getElementById('pricing-section');
-  const pricingTitle = document.getElementById('pricing-title');
-  
-  serviceLinks.forEach(link => {
-    link.addEventListener('click', function(e) {
-      e.preventDefault();
-      const serviceType = this.getAttribute('data-type');
-      
-      // Show pricing cards below (they're already in the flow)
-      pricingSection.style.display = 'block';
-      
-      // Scroll to pricing section smoothly
-      pricingSection.scrollIntoView({ 
-        behavior: 'smooth', 
-        block: 'start' 
-      });
-      
-      // Customize based on service type
-      customizePricing(serviceType);
-    });
-  });
-  
-  function customizePricing(serviceType) {
-    // Modify pricing title based on service type
-    switch(serviceType) {
-      case 'tech':
-        pricingTitle.textContent = 'Tech Services Pricing';
-        // You can also change prices here if needed
-        break;
-      case 'growth':
-        pricingTitle.textContent = 'Growth Services Pricing';
-        break;
-      case 'unknown':
-        pricingTitle.textContent = 'Consultation Services Pricing';
-        break;
+<script>
+// Global variable to track if pricing is visible
+window.pricingState = {
+    isVisible: false,
+    activeService: null
+};
+
+// Main initialization function
+function initializePricingButtons() {
+    console.log('Initializing pricing buttons...');
+    
+    const serviceLinks = document.querySelectorAll('.js-show-pricing');
+    const pricingSection = document.getElementById('pricing-section');
+    
+    // Always reset pricing section state when page loads/returns
+    if (pricingSection) {
+        pricingSection.style.display = 'none';
+        pricingSection.style.opacity = '0';
+        window.pricingState.isVisible = false;
     }
-  }
+    
+    // Remove all existing event listeners first
+    serviceLinks.forEach(link => {
+        const newLink = link.cloneNode(true);
+        link.parentNode.replaceChild(newLink, link);
+    });
+    
+    // Re-select the fresh links
+    const freshLinks = document.querySelectorAll('.js-show-pricing');
+    
+    freshLinks.forEach(link => {
+        // Add click event
+        link.addEventListener('click', handleServiceClick);
+        
+        // Add visual feedback
+        link.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-3px)';
+        });
+        
+        link.addEventListener('mouseleave', function() {
+            if (!this.classList.contains('active')) {
+                this.style.transform = 'translateY(0)';
+            }
+        });
+        
+        // Add touch feedback for mobile
+        link.addEventListener('touchstart', function() {
+            this.style.transform = 'translateY(-1px)';
+        });
+        
+        link.addEventListener('touchend', function() {
+            setTimeout(() => {
+                if (!this.classList.contains('active')) {
+                    this.style.transform = 'translateY(0)';
+                }
+            }, 150);
+        });
+    });
+    
+    console.log('Pricing buttons initialized for', freshLinks.length, 'buttons');
+}
+
+// Handle service button clicks
+function handleServiceClick(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    const serviceType = this.getAttribute('data-type');
+    console.log('Service clicked:', serviceType);
+    
+    // Update active state
+    document.querySelectorAll('.js-show-pricing').forEach(link => {
+        link.classList.remove('active');
+    });
+    this.classList.add('active');
+    
+    // Show pricing section
+    showPricingSection(serviceType);
+}
+
+// Show pricing section with animation
+function showPricingSection(serviceType) {
+    const pricingSection = document.getElementById('pricing-section');
+    const pricingTitle = document.getElementById('pricing-title');
+    
+    if (!pricingSection) {
+        console.error('Pricing section not found!');
+        return;
+    }
+    
+    // Update global state
+    window.pricingState.isVisible = true;
+    window.pricingState.activeService = serviceType;
+    
+    // Show section
+    pricingSection.style.display = 'block';
+    
+    // Force reflow for animation
+    pricingSection.offsetHeight;
+    
+    // Animate in
+    pricingSection.style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+    pricingSection.style.opacity = '1';
+    pricingSection.style.transform = 'translateY(0)';
+    
+    // Update title based on service type
+    if (pricingTitle) {
+        switch(serviceType) {
+            case 'tech':
+                pricingTitle.textContent = 'Tech Services Pricing';
+                break;
+            case 'growth':
+                pricingTitle.textContent = 'Growth Services Pricing';
+                break;
+            case 'unknown':
+                pricingTitle.textContent = 'Consultation Services';
+                break;
+        }
+    }
+    
+    // Scroll to pricing section
+    setTimeout(() => {
+        pricingSection.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start',
+            inline: 'nearest'
+        });
+    }, 300);
+}
+
+// Hide pricing section (for when leaving page)
+function hidePricingSection() {
+    const pricingSection = document.getElementById('pricing-section');
+    if (pricingSection) {
+        pricingSection.style.display = 'none';
+        pricingSection.style.opacity = '0';
+        pricingSection.style.transform = 'translateY(20px)';
+        window.pricingState.isVisible = false;
+        window.pricingState.activeService = null;
+    }
+    
+    // Reset active buttons
+    document.querySelectorAll('.js-show-pricing').forEach(link => {
+        link.classList.remove('active');
+        link.style.transform = 'translateY(0)';
+    });
+}
+
+// Enhanced DOM ready handler
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('DOM fully loaded');
+    initializePricingButtons();
+    
+    // Add CSS for initial hidden state
+    const pricingSection = document.getElementById('pricing-section');
+    if (pricingSection) {
+        pricingSection.style.opacity = '0';
+        pricingSection.style.transform = 'translateY(20px)';
+    }
 });
+
+// Handle page transitions (for smoothState.js)
+document.addEventListener('smoothState:end', function() {
+    console.log('Page transition ended - reinitializing buttons');
+    setTimeout(() => {
+        initializePricingButtons();
+        
+        // Restore previous state if returning to page
+        if (window.pricingState.isVisible && window.pricingState.activeService) {
+            setTimeout(() => {
+                showPricingSection(window.pricingState.activeService);
+                
+                // Re-activate the correct button
+                const activeButton = document.querySelector(`.js-show-pricing[data-type="${window.pricingState.activeService}"]`);
+                if (activeButton) {
+                    activeButton.classList.add('active');
+                }
+            }, 100);
+        }
+    }, 50);
+});
+
+// Fallback for turbolinks or other page transition libraries
+document.addEventListener('turbolinks:load', function() {
+    console.log('Turbolinks load - reinitializing buttons');
+    initializePricingButtons();
+});
+
+// Handle browser back/forward navigation
+window.addEventListener('pageshow', function(event) {
+    if (event.persisted) {
+        console.log('Page restored from cache - reinitializing buttons');
+        initializePricingButtons();
+    }
+});
+
+// Emergency fallback - check every second if buttons work
+setInterval(function() {
+    const buttons = document.querySelectorAll('.js-show-pricing');
+    let workingButtons = 0;
+    
+    buttons.forEach(button => {
+        // Test if button has click handler
+        if (button.onclick || button.hasAttribute('data-listener-added')) {
+            workingButtons++;
+        } else {
+            // Re-add click handler if missing
+            button.setAttribute('data-listener-added', 'true');
+            button.addEventListener('click', handleServiceClick);
+            workingButtons++;
+        }
+    });
+    
+    if (workingButtons < buttons.length) {
+        console.log('Reinitialized', buttons.length - workingButtons, 'broken buttons');
+    }
+}, 2000);
+
+// Force show pricing section if URL has hash
+if (window.location.hash === '#pricing') {
+    setTimeout(() => {
+        showPricingSection('tech'); // Default to tech
+    }, 1000);
+}
+
+console.log('Pricing module loaded successfully');
 </script>
   </body>
 </html>
