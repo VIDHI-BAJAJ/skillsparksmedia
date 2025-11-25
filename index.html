@@ -33,6 +33,96 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<style>
+    .testimonial-slider-container {
+  width: 92%;
+  margin: auto;
+  position: relative;
+  padding: 2rem 0;
+}
+
+.carousel-inner {
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.carousel-item {
+  flex: 0 0 calc(33.33% - 20px);
+}
+
+.testimonial-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  height: 100%;
+}
+
+.testimonial-card p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.profile img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile h5 {
+  margin: 0;
+  font-weight: 700;
+}
+
+.profile span {
+  color: #777;
+  font-size: 14px;
+}
+
+/* SLIDER ARROWS */
+.arrow-btn {
+  background: #ddd;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  color: #333;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  border: none;
+  background: transparent;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-control-prev {
+  left: -30px;
+}
+
+.carousel-control-next {
+  right: -30px;
+}
+
+</style>
 </head>
 
 <body>
@@ -640,60 +730,129 @@ The result? A clear path to 10X growth with zero overwhelm. -->
                     </div>
                 </div>
             </div> -->
+<!-- TESTIMONIALS (Placed where Clients section was) -->
 
-<!-- TESTIMONIALS -->
-<section class="testimonials">
-	<div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div id="customers-testimonials" class="owl-carousel">
+<div id="clients" style="padding-top: 2rem;">
+  <div class="grid-wrap">
+    <div class="offset-bottom-sm">
 
-            <!--TESTIMONIAL 1 -->
-            <div class="item">
-              <div class="shadow-effect">
-                <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
+      <div class="row center-xs">
+        <header class="col-sm-12">
+          <h2 class="wow textLeft">testimonials<b style="background-color: black;">.</b></h2>
+        </header>
+      </div>
+
+      <!-- TESTIMONIALS CLEAN VERSION -->
+      <div class="testimonial-slider-container">
+
+        <div id="testimonialCarousel" class="carousel">
+          <div class="carousel-inner">
+
+            <!-- CARD 1 -->
+            <div class="carousel-item active">
+              <div class="testimonial-card">
+                <p>"Some quick example text to build on the card title and make up the bulk of the card's content."</p>
+                <div class="profile">
+                  <img src="https://codingyaar.com/wp-content/uploads/square-headshot-1.png">
+                  <div>
+                    <h5>Jane Doe</h5>
+                    <span>CEO, Example Company</span>
+                  </div>
+                </div>
               </div>
-              <div class="testimonial-name">EMILIANO AQUILANI</div>
             </div>
-            <!--END OF TESTIMONIAL 1 -->
-            <!--TESTIMONIAL 2 -->
-            <div class="item">
-              <div class="shadow-effect">
-                <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
+
+            <!-- CARD 2 -->
+            <div class="carousel-item">
+              <div class="testimonial-card">
+                <p>"Some quick example text to build on the card title and make up the bulk of the card's content."</p>
+                <div class="profile">
+                  <img src="https://codingyaar.com/wp-content/uploads/square-headshot-2.png">
+                  <div>
+                    <h5>June Doe</h5>
+                    <span>CEO, Example Company</span>
+                  </div>
+                </div>
               </div>
-              <div class="testimonial-name">ANNA ITURBE</div>
             </div>
-            <!--END OF TESTIMONIAL 2 -->
-            <!--TESTIMONIAL 3 -->
-            <div class="item">
-              <div class="shadow-effect">
-                <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
+
+            <!-- CARD 3 -->
+            <div class="carousel-item">
+              <div class="testimonial-card">
+                <p>"Some quick example text to build on the card title and make up the bulk of the card's content."</p>
+                <div class="profile">
+                  <img src="https://codingyaar.com/wp-content/uploads/bootstrap-profile-card-image.jpg">
+                  <div>
+                    <h5>John Doe</h5>
+                    <span>CEO, Example Company</span>
+                  </div>
+                </div>
               </div>
-              <div class="testimonial-name">LARA ATKINSON</div>
             </div>
-            <!--END OF TESTIMONIAL 3 -->
-            <!--TESTIMONIAL 4 -->
-            <div class="item">
-              <div class="shadow-effect">
-                <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
+            
+                        <!-- CARD 3 -->
+            <div class="carousel-item">
+              <div class="testimonial-card">
+                <p>"Some quick example text to build on the card title and make up the bulk of the card's content."</p>
+                <div class="profile">
+                  <img src="https://codingyaar.com/wp-content/uploads/bootstrap-profile-card-image.jpg">
+                  <div>
+                    <h5>John Doe</h5>
+                    <span>CEO, Example Company</span>
+                  </div>
+                </div>
               </div>
-              <div class="testimonial-name">IAN OWEN</div>
             </div>
-            <!--END OF TESTIMONIAL 4 -->
-            <!--TESTIMONIAL 5 -->
-            <div class="item">
-              <div class="shadow-effect">
-              
-                <p>Dramatically maintain clicks-and-mortar solutions without functional solutions. Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate.</p>
+            
+            
+                        <!-- CARD 3 -->
+            <div class="carousel-item">
+              <div class="testimonial-card">
+                <p>"Some quick example text to build on the card title and make up the bulk of the card's content."</p>
+                <div class="profile">
+                  <img src="https://codingyaar.com/wp-content/uploads/bootstrap-profile-card-image.jpg">
+                  <div>
+                    <h5>John Doe</h5>
+                    <span>CEO, Example Company</span>
+                  </div>
+                </div>
               </div>
-              <div class="testimonial-name">MICHAEL TEDDY</div>
             </div>
-            <!--END OF TESTIMONIAL 5 -->
+            
+                        <!-- CARD 3 -->
+            <div class="carousel-item">
+              <div class="testimonial-card">
+                <p>"Some quick example text to build on the card title and make up the bulk of the card's content."</p>
+                <div class="profile">
+                  <img src="https://codingyaar.com/wp-content/uploads/bootstrap-profile-card-image.jpg">
+                  <div>
+                    <h5>John Doe</h5>
+                    <span>CEO, Example Company</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
           </div>
+
+          <!-- SLIDER BUTTONS -->
+          <button class="carousel-control-prev" type="button">
+            <span class="arrow-btn">&#10094;</span>
+          </button>
+          <button class="carousel-control-next" type="button">
+            <span class="arrow-btn">&#10095;</span>
+          </button>
+
         </div>
       </div>
-      </div>
-    </section>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- TESTIMONIALS -->
+
     <!-- END OF TESTIMONIALS -->
      
             <!-- APPLY -->
@@ -812,6 +971,27 @@ The result? A clear path to 10X growth with zero overwhelm. -->
     <!-- COPY THIS EVERYWHERE -->
     <div class="form-response js-form-response text-center"></div>
     <script src="js/main.js"></script>
+   <script>
+    let position = 0;
+let cardWidth = document.querySelector(".carousel-item").offsetWidth + 20; 
+
+document.querySelector(".carousel-control-next").onclick = () => {
+  const container = document.querySelector(".carousel-inner");
+  if (position < container.scrollWidth - container.clientWidth) {
+    position += cardWidth;
+    container.scrollTo({ left: position, behavior: "smooth" });
+  }
+};
+
+document.querySelector(".carousel-control-prev").onclick = () => {
+  if (position > 0) {
+    position -= cardWidth;
+    document.querySelector(".carousel-inner")
+      .scrollTo({ left: position, behavior: "smooth" });
+  }
+};
+
+   </script>
     <!-- scripts -->
 </body>
 </html>
