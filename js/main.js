@@ -1242,6 +1242,30 @@ PageInits = {
     }
   },
 };
+ // Add the testimonialsCarousel function here, right before the closing brace of PageInits:
+PageInits.testimonialsCarousel = function () {
+    const customersTestimonials = document.querySelector('#customers-testimonials');
+    
+    if (customersTestimonials && $(customersTestimonials).owlCarousel) {
+      $(customersTestimonials).owlCarousel({
+        loop: true,
+        center: true,
+        items: 3,
+        margin: 0,
+        autoplay: true,
+        dots: true,
+        autoplayTimeout: 8500,
+        smartSpeed: 450,
+        responsive: {
+          0: { items: 1 },
+          768: { items: 2 },
+          1170: { items: 3 }
+        }
+      });
+    }
+  }
+};
+
 
 function funZoneCanvasInit() {
   var canvas, gl; // canvas and webgl context
@@ -1428,7 +1452,7 @@ PageInits.buttonHoverEffect(); // BS button hover effect
 PageInits.lineShape(); // line drawing
 PageInits.hamburgerMenu(); // hamburger menu
 PageInits.contacts(); // hamburger menu
-
+PageInits.testimonialsCarousel(); 
 // smoothstate
 $(function () {
   "use strict";
@@ -1722,24 +1746,7 @@ $.extend($.easing, {
   },
 });
 
-document.addEventListener("DOMContentLoaded", function () {
-    const customersTestimonials = document.querySelector('#customers-testimonials');
-
-    if (customersTestimonials && $(customersTestimonials).owlCarousel) {
-        $(customersTestimonials).owlCarousel({
-            loop: true,
-            center: true,
-            items: 3,
-            margin: 0,
-            autoplay: true,
-            dots: true,
-            autoplayTimeout: 8500,
-            smartSpeed: 450,
-            responsive: {
-                0: { items: 1 },
-                768: { items: 2 },
-                1170: { items: 3 }
-            }
-        });
-    }
+// Replace the existing document ready function at the end with this:
+$(document).ready(function() {
+  PageInits.testimonialsCarousel(); // Initialize carousel on page load
 });
