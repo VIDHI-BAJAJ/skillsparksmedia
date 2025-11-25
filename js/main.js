@@ -1721,3 +1721,25 @@ $.extend($.easing, {
     return $.easing.easeOutBounce(x, t * 2 - d, 0, c, d) * 0.5 + c * 0.5 + b;
   },
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const customersTestimonials = document.querySelector('#customers-testimonials');
+
+    if (customersTestimonials && $(customersTestimonials).owlCarousel) {
+        $(customersTestimonials).owlCarousel({
+            loop: true,
+            center: true,
+            items: 3,
+            margin: 0,
+            autoplay: true,
+            dots: true,
+            autoplayTimeout: 8500,
+            smartSpeed: 450,
+            responsive: {
+                0: { items: 1 },
+                768: { items: 2 },
+                1170: { items: 3 }
+            }
+        });
+    }
+});
