@@ -35,7 +35,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
 
 <style>
-      .testimonial-slider-container {
+.testimonial-slider-container {
   width: 92%;
   margin: auto;
   position: relative;
@@ -59,19 +59,23 @@
   padding: 25px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .testimonial-card p {
   font-size: 16px;
   color: #333;
-  line-height: 1.6;
-  margin-bottom: 20px;
+  line-height: 1.7;
+  margin-bottom: 20px;     
 }
 
 .profile {
   display: flex;
   align-items: center;
   gap: 12px;
+  margin-top: auto;        
 }
 
 .profile img {
@@ -84,14 +88,17 @@
 .profile h5 {
   margin: 0;
   font-weight: 700;
+  font-size: 16px;
 }
 
 .profile span {
   color: #777;
-  font-size: 14px;
+  font-size: 13px;
+  display: block;
+  margin-top: 3px;
 }
 
-/* SLIDER ARROWS */
+
 .arrow-btn {
   background: #ddd;
   width: 45px;
@@ -114,13 +121,60 @@
   transform: translateY(-50%);
 }
 
-.carousel-control-prev {
-  left: 10px;
+.carousel-control-prev { left: 10px; }
+.carousel-control-next { right: 10px; }
+
+
+/* Tablets (2 cards) */
+@media (max-width: 992px) {
+  .carousel-item {
+    flex: 0 0 calc(50% - 20px);
+  }
+
+  .testimonial-card {
+    padding: 20px;
+  }
+
+  .testimonial-card p {
+    font-size: 15px;
+  }
 }
 
-.carousel-control-next {
-  right: 10px;
+/* Mobile (1 card) */
+@media (max-width: 576px) {
+  .carousel-inner {
+    gap: 15px;
+    padding: 0.5rem;
+  }
+
+  .carousel-item {
+    flex: 0 0 100%;
+  }
+
+  .testimonial-card {
+    padding: 18px;
+  }
+
+  .profile img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .profile h5 {
+    font-size: 15px;
+  }
+
+  .profile span {
+    font-size: 12px;
+  }
+
+  .arrow-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+  }
 }
+
 </style>
 </head>
 
@@ -801,7 +855,7 @@ The result? A clear path to 10X growth with zero overwhelm. -->
             <!-- 5 -->
             <div class="carousel-item">
               <div class="testimonial-card">
-                <p>"We wanted a modern, youthful brand identity — SkillSpark Media nailed it. They are now our go-to media partner."</p>
+                <p>"We wanted a modern, youthful brand identity SkillSpark Media nailed it. They are now our go-to media partner."</p>
                 <div class="profile">
                   <div>
                     <h5>Krishna</h5>
