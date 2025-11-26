@@ -1,22 +1,21 @@
 <!doctype html>
 <html lang="en" class="no-js">
 
-<meta http-equiv="content-type" content="text/html;charset=utf-8" /><!-- /Added by HTTrack -->
+<meta http-equiv="content-type" content="text/html;charset=utf-8" />
 <head>
     <meta charset="utf-8">
     <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
 
-    <title> SkillSpark Media</title>
+    <title>SkillSpark Media</title>
     <meta name="description"
     content="Supercrew provides growth, marketing, and tech solutions that help brands achieve exponential growth" />
     <meta name="keywords"
     content="web, website, user experience, ux, designer, graphics, product, user interface, ui, developer, css, html, jQuery, mobile, developer, business, mobile app, SEO, Digital Marketing, Google Ads, Meta Ads, Facebook Ads, Instagram Ads, Snapchat Ads, Quora Ads, Twitter Ads, LinkedIn Ads, Customer Engagement, Social media handling, Production, Media" />
     <meta name="author" content="SkillSpark Media" />
-
+    <meta property="og:url" content="index.html">
     <meta property="og:title" content="SkillSpark Media">
     <meta property="og:description" content="SkillSpark Media provides growth, marketing, and tech solutions that help brands achieve exponential growth">
-    <meta property="og:url" content="index.html">
     <link rel="icon" type="image/png" href="img/favicon/favicon-16x16.png" sizes="16x16">
     <link rel="icon" type="image/png" href="img/favicon/favicon-32x32.png" sizes="32x32">
     <link rel="icon" type="image/png" href="img/favicon/android-chrome-192x192.png" sizes="192x192">
@@ -28,6 +27,155 @@
     <link href="css/custom.css" rel="stylesheet" type="text/css" />
 
     <link href="css/styles.css" rel="stylesheet" type="text/css" />
+
+    <!-- Include Owl Carousel & jQuery -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<style>
+.testimonial-slider-container {
+  width: 92%;
+  margin: auto;
+  position: relative;
+  padding: 2rem 0;
+}
+
+.carousel-inner {
+  display: flex;
+  gap: 20px;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.carousel-item {
+  flex: 0 0 calc(33.33% - 20px);
+}
+
+.testimonial-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 25px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.testimonial-card p {
+  font-size: 16px;
+  color: #333;
+  line-height: 1.7;
+  margin-bottom: 20px;     
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: auto;        
+}
+
+.profile img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile h5 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+.profile span {
+  color: #777;
+  font-size: 13px;
+  display: block;
+  margin-top: 3px;
+}
+
+
+.arrow-btn {
+  background: #ddd;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  font-size: 22px;
+  cursor: pointer;
+  color: #333;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  border: none;
+  background: transparent;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.carousel-control-prev { left: 10px; }
+.carousel-control-next { right: 10px; }
+
+
+/* Tablets (2 cards) */
+@media (max-width: 992px) {
+  .carousel-item {
+    flex: 0 0 calc(50% - 20px);
+  }
+
+  .testimonial-card {
+    padding: 20px;
+  }
+
+  .testimonial-card p {
+    font-size: 15px;
+  }
+}
+
+/* Mobile (1 card) */
+@media (max-width: 576px) {
+  .carousel-inner {
+    gap: 15px;
+    padding: 0.5rem;
+  }
+
+  .carousel-item {
+    flex: 0 0 100%;
+  }
+
+  .testimonial-card {
+    padding: 18px;
+  }
+
+  .profile img {
+    width: 48px;
+    height: 48px;
+  }
+
+  .profile h5 {
+    font-size: 15px;
+  }
+
+  .profile span {
+    font-size: 12px;
+  }
+
+  .arrow-btn {
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+  }
+}
+
+</style>
 </head>
 
 <body>
@@ -144,7 +292,6 @@
                             <span class="test10 test2" style="color: white; font-weight: 700;">Your Brand, Our Wings.<b class=""
                                     style="color: #1B1A25 !important;"></b></span>
                         </h1>
-
                     </div>
                     <div class="scroll-line">
                         <span style="background-color: white;"></span>
@@ -170,9 +317,8 @@
                 <div id="studio-intro">
                     <div class="row middle-xs">
                         <div class="col-xs-12 col-md-10 col-md-offset-1 col-lg-offset-2">
-                            <h3 class="wow textLeft" style="color: white;">Unlock 10X Growth for Your Coaching Business</h3>
-                            <p class="wow big textLeft" style="color: white;"> We help coaches & course creators scale with done-for-you funnels, automation, and ad funding.
- Focus on teaching. We’ll handle growth.
+                            <h3 class="wow textLeft" style="color: white;">We build high-performing stores and websites.</h3>
+                            <p class="wow big textLeft" style="color: white;"> Clean design, fast execution, and development done the right way from day one.
                         </div>
                     </div>
                 </div>
@@ -207,10 +353,10 @@
                                         <p class="box wow textLeft" data-wow-delay=".15s">
                                            At SkillSpark Media, we believe coaches shouldn’t waste energy on tech, funnels, or ads.
  Our partnership-first approach means :
-<li>You focus on coaching & teaching</li>
-<li>We handle visibility, engagement & conversions</li>
-<li>Growth becomes a system, not a struggle</li>
-The result? A clear path to 10X growth with zero overwhelm.
+<li>We focus on building only what drives measurable improvement — no clutter, no unnecessary features.</li>
+<li>Clean execution, consistent iteration, and long-term scalability guide every project we deliver.</li>
+<!-- <li>Growth becomes a system, not a struggle</li>
+The result? A clear path to 10X growth with zero overwhelm. -->
                                         </p>
                                         
                                     </div>
@@ -244,7 +390,7 @@ The result? A clear path to 10X growth with zero overwhelm.
                                     </div>
                                 </div>
                             </div> -->
-                            <!-- <div class="col-sm-12 col-md-4">
+                            <div class="col-sm-12 col-md-4">
                                 <div class="approach-item center wow textLeft">
                                     <span class="approach-icon">
                                         <img data-alt-src="img/approach/icon-design.gif"
@@ -288,7 +434,7 @@ The result? A clear path to 10X growth with zero overwhelm.
                                         </p>
                                     </div>
                                 </div>
-                            </div> -->
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -322,7 +468,7 @@ The result? A clear path to 10X growth with zero overwhelm.
                                                     </g>
                                                 </svg>
                                             </div>
-                                            <p class="wow textLeft" data-wow-delay=".15s">We don’t just consult—we build & run your growth engine
+                                            <p class="wow textLeft" data-wow-delay=".15s">We value our partners and ensure their satisfaction with regular updates, tangible milestones and timely delivery. We don't just deliver what you asked us to rather we ideate, improvise, improve and approve because we don't work with clients, we work with partners.
                                             </p>
                                         </div>
                                     </div>
@@ -332,25 +478,25 @@ The result? A clear path to 10X growth with zero overwhelm.
                                 <div class="col-md-12 col-lg-7 col-lg-offset-5">
                                     <div class="row top-xs">
                                         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-6">
-                                            <h4 class="wow textLeft">Visibility Boost </h4>
+                                            <h4 class="wow textLeft">Shopify Store Design & Development</h4>
                                             <ul class="wow textLeft">
-                                                <li>Paid ads</li>
-                                                <li>Content Strategy</li>
-                                                <li>100% ad funding</li>
+                                                <li>We build Shopify stores that are fast, scalable, and built around your brand and customer journey.</li>
+                                                <!-- <li>Content Strategy</li>
+                                                <li>100% ad funding</li> -->
                                             </ul>
                                         </div>
                                         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-6">
-                                            <h4 class="wow textLeft">Conversion Systems</h4>
+                                            <h4 class="wow textLeft">Website Design & Development</h4>
                                             <ul class="wow textLeft">
-                                                <li>High-converting funnels</li>
-                                                <li>webinar strategies</li>
-                                                <li>sales scripts</li>
+                                                <li>Modern, responsive websites designed to establish credibility and drive growth built on platforms that fit your needs.</li>
+                                                <!-- <li>webinar strategies</li>
+                                                <li>sales scripts</li> -->
                                             </ul>
                                         </div>
                                         <div class="col-xs-12 col-sm-6 col-md-3 col-lg-6">
-                                            <h4 class="wow textLeft">Community Growth</h4>
+                                            <h4 class="wow textLeft">Ongoing Support & Maintenance</h4>
                                             <ul class="wow textLeft">
-                                                <li>Loyal audience building for long-term revenue</li>
+                                                <li>For brands that want dependable support without chasing developers.</li>
                                             </ul>
                                         </div>
                                     </div>
@@ -636,7 +782,129 @@ The result? A clear path to 10X growth with zero overwhelm.
                     </div>
                 </div>
             </div> -->
+<!-- TESTIMONIALS (Placed where Clients section was) -->
+<!-- TESTIMONIALS SECTION -->
+<div id="clients" style="padding-top: 2rem;">
+  <div class="grid-wrap">
+    <div class="offset-bottom-sm">
 
+      <div class="row center-xs">
+        <header class="col-sm-12">
+          <h2 class="wow textLeft">testimonials<b style="background-color: black;">.</b></h2>
+        </header>
+      </div>
+
+      <!-- TESTIMONIAL SLIDER -->
+      <div class="testimonial-slider-container">
+
+        <div id="testimonialCarousel" class="carousel">
+          <div class="carousel-inner">
+
+            <!-- 1 -->
+            <div class="carousel-item active">
+              <div class="testimonial-card">
+                <p>"Skillspark Media completely transformed our online presence. Their branding and website work was clean, modern, and exactly what our customers resonate with."</p>
+                <div class="profile">
+                  <div>
+                    <h5>Akansha Bansal</h5>
+                    <span>Cherie</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2 -->
+            <div class="carousel-item">
+              <div class="testimonial-card">
+                <p>"Our brand needed a fresh identity and Skillspark Media delivered beyond expectations. Highly recommended for startups looking to stand out!"</p>
+                <div class="profile">
+                  <div>
+                    <h5>Saru Pruthi</h5>
+                    <span>HiddenHungr</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+           
+
+            <!-- 4 -->
+            <div class="carousel-item">
+              <div class="testimonial-card">
+                <p>"Their creative approach helped us attract more customers within weeks. Super hardworking team!"</p>
+                <div class="profile">
+                  <div>
+                    <h5>Krishna</h5>
+                    <span>The Dome</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5 -->
+            <div class="carousel-item">
+              <div class="testimonial-card">
+                <p>"We wanted a modern, youthful brand identity SkillSpark Media nailed it. They are now our go-to media partner."</p>
+                <div class="profile">
+                  <div>
+                    <h5>Krishna</h5>
+                    <span>Wingmann</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 6 -->
+            <div class="carousel-item">
+              <div class="testimonial-card">
+                <p>"Their AI-driven branding & website was exceptional. SkillSpark Media deeply understands both tech and design."</p>
+                <div class="profile">
+                  <div>
+                    <h5>Pragun Das</h5>
+                    <span>AIEvoked</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- 7 (FIXED VERSION — previously broken) -->
+            <div class="carousel-item">
+              <div class="testimonial-card">
+                <p>"The website & marketing designs helped us appear more credible. We saw higher engagement and more student inquiries."</p>
+                <div class="profile">
+                  <div>
+                    <h5>Meenakshi Vashisht</h5>
+                    <span>World Wide Overseas</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- SLIDER BUTTONS -->
+          <button class="carousel-control-prev" type="button">
+            <span class="arrow-btn">&#10094;</span>
+          </button>
+          <button class="carousel-control-next" type="button">
+            <span class="arrow-btn">&#10095;</span>
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+  </div>
+</div>
+
+
+
+<!-- TESTIMONIALS -->
+
+    <!-- END OF TESTIMONIALS -->
+     
             <!-- APPLY -->
             <div id="bottom-cta">
                 <!-- <figure class="apply-img">
@@ -743,15 +1011,37 @@ The result? A clear path to 10X growth with zero overwhelm.
                 <br>
                 <br><br>
                 <a href="mailto:skillsparkmedia.emp@gmail.com" style="color: white">skillsparkmedia.emp@gmail.com</a>
-                <br><br><br><br>
+               <br><br><br><br>
                <a href="#" style="color: white"> &copy;2025  Skillsparkmedia</a>
             </p>
+            
         </footer>
     </div>
     <script src="js/js-dist.js"></script>
     <!-- COPY THIS EVERYWHERE -->
     <div class="form-response js-form-response text-center"></div>
     <script src="js/main.js"></script>
+   <script>
+    let position = 0;
+let cardWidth = document.querySelector(".carousel-item").offsetWidth + 20; 
+
+document.querySelector(".carousel-control-next").onclick = () => {
+  const container = document.querySelector(".carousel-inner");
+  if (position < container.scrollWidth - container.clientWidth) {
+    position += cardWidth;
+    container.scrollTo({ left: position, behavior: "smooth" });
+  }
+};
+
+document.querySelector(".carousel-control-prev").onclick = () => {
+  if (position > 0) {
+    position -= cardWidth;
+    document.querySelector(".carousel-inner")
+      .scrollTo({ left: position, behavior: "smooth" });
+  }
+};
+
+   </script>
     <!-- scripts -->
 </body>
 </html>
