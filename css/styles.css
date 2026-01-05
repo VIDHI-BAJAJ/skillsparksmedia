@@ -10419,6 +10419,7 @@ a.bs-button {
   overflow: hidden;
   position: relative;
   background-color: white;
+  border-radius:10px;
   /* background-image: linear-gradient(#ed3833, #df3d7e); */
 }
 
@@ -11203,7 +11204,7 @@ header .header-description {
 }
 
 #services ul {
-  margin-top: 30px;
+  margin-top: 10px;
   font-size: 1em;
   line-height: 2em;
 }
@@ -11300,7 +11301,7 @@ header .header-description {
 #bottom-cta {
   background-color: #f2f0f0;
   position: relative;
-  margin-top: 240px;
+ 
 }
 
 .test22::before {
@@ -12168,8 +12169,8 @@ header .header-description {
     padding: 6vw 12vw;
   }
   #blog-related,
-  #bottom-cta {
-    margin-top: 300px;
+ {
+    margin-top: 30px;
   }
   #blog-related .apply-img,
   #bottom-cta .apply-img {
@@ -12188,12 +12189,11 @@ header .header-description {
     /* font-size: 10em */
   }
   #services h4 {
-    margin-top: 4em;
     font-size: 1.25em;
   }
   #services ul {
     font-size: 0.75em;
-    margin: 2em 0 0;
+    margin: 10px 0 0;
   }
   #services ul li {
     padding: 0.2em 0;
