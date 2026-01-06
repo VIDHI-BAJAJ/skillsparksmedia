@@ -1727,4 +1727,42 @@ $.extend($.easing, {
 // Replace the existing document ready function at the end with this:
 $(document).ready(function() {
   PageInits.testimonialsCarousel(); // Initialize carousel on page load
+  initializeContactForm(); // Initialize contact form
 });
+
+// Contact form submission handler
+function initializeContactForm() {
+  const contactForm = document.getElementById('contact-form');
+  
+  if (contactForm) {
+    contactForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Get form data
+      const formData = new FormData(contactForm);
+      const formObject = {};
+      for (let [key, value] of formData.entries()) {
+        formObject[key] = value;
+      }
+      
+      // Show loading state
+      const submitButton = contactForm.querySelector('button[type="submit"]');
+      const originalText = submitButton.innerHTML;
+      submitButton.innerHTML = '<span data-hover="Sending...">Sending...</span>';
+      submitButton.disabled = true;
+      
+      // Simulate form submission (in a real scenario, you would send this to a server)
+      setTimeout(function() {
+        // Reset form
+        contactForm.reset();
+        
+        // Show success message
+        alert('Thank you for your message! We will get back to you soon.');
+        
+        // Reset button
+        submitButton.innerHTML = originalText;
+        submitButton.disabled = false;
+      }, 2000);
+    });
+  }
+}
