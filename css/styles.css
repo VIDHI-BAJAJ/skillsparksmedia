@@ -7561,6 +7561,12 @@ section.main-type .small {
   height: 92.5vh;
 }
 
+@media only screen and (max-width: 64em) {
+  .form-content {
+    margin-top: 20vh;
+    height: 70vh;
+  }
+}
 .option-wrap {
   margin-top: 8vh;
 }
