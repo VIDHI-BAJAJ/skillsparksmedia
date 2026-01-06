@@ -9948,6 +9948,7 @@ h6 {
   font-weight: 800;
   margin: 0;
   line-height: 1.1em;
+  color: white;
 }
 
 h1 b,
@@ -11190,7 +11191,7 @@ header .header-description {
  h4.wow.textLeft {
     font-size: 35px;
   }
-  
+
 @media (max-width: 768px) {
   h4.wow.textLeft {
     font-size: 25px !important;
