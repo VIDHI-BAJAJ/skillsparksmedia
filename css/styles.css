@@ -10937,6 +10937,14 @@ header .header-description {
   width: 20%;
 }
 
+@media screen and (max-width: 768px) {
+#approach .svg-shape {
+    top: 5vh;
+    right: 10%;
+    width: 20%;
+}
+}
+
 #approach sup {
   display: none;
 }
@@ -11169,8 +11177,25 @@ header .header-description {
   font-size: 3em;
 }
 
+@media screen and (max-width: 768px) {
+  #clients h2 {
+    font-size: 2em;
+  }
+}
+
 #clients li {
   padding: 6vw;
+}
+
+ h4.wow.textLeft {
+    font-size: 35px;
+  }
+  
+@media (max-width: 768px) {
+  h4.wow.textLeft {
+    font-size: 25px !important;
+    font-size: 35px;
+  }
 }
 
 #studio-intro {
@@ -13272,6 +13297,7 @@ header .header-description {
     overflow: hidden;
     cursor: pointer;
   }
+
   #approach .approach-item:hover {
     margin-bottom: 1em;
   }
